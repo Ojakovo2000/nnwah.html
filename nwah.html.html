@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+ 
+<html> 
+<head><meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>Nwah</title>
+<link rel="stylesheet" href="./styles.css">
+<link rel="icon" href="./favicon.ico">
+</head>
+
+<body> 
+ 
+<div class="slidpics"> 
+ 
+<div class="slidephoto fade"> 
+  <div class="numbertext">1 / 3</div> 
+  <img src="./media/WhatsApp Image 2024-04-29 at 22.57.13_7aace5d0.jpg" style="width:100%"> 
+  <div class="text">Good Morning, Darling</div> 
+</div> 
+ 
+<div class="slidephoto fade"> 
+  <div class="numbertext">2 / 3</div> 
+  <img src="./media/WhatsApp Image 2024-05-07 at 01.55.45_94c6f85e.jpg" style="width:100%"> 
+  <div class="text">Have a Beautiful Day Ahead</div> 
+</div> 
+ 
+<div class="slidephoto fade"> 
+  <div class="numbertext">3 / 3</div> 
+  <img src="./media/WhatsApp Image 2024-05-13 at 14.49.55_ad3b85ee.jpg" style="width:100%"> 
+  <div class="text">I Love you</div> 
+</div> 
+ 
+<a class="prev" onclick="plusSlides(-1)"><</a> 
+<a class="next" onclick="plusSlides(1)">></a> 
+ 
+</div> 
+<br> 
+ 
+<div style="text-align:center"> 
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div> 
+ 
+<script> 
+var slideIndex = 1; 
+showSlides(slideIndex); 
+ 
+function plusSlides(n) { 
+  showSlides(slideIndex += n); 
+} 
+ 
+function currentSlide(n) { 
+  showSlides(slideIndex = n); 
+} 
+ 
+function showSlides(n) { 
+  var i; 
+  var slides = document.getElementsByClassName("slidephoto"); 
+  var dots = document.getElementsByClassName("dot"); 
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length} 
+  for (i = 0; i < slides.length; i++) { 
+      slides[i].style.display = "none"; 
+  } 
+  for (i = 0; i < dots.length; i++) { 
+      dots[i].className = dots[i].className.replace(" active", ""); 
+  } 
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active"; 
+} 
+</script> 
+</body>  
+</html> 
